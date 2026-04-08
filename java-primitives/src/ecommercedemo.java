@@ -29,7 +29,7 @@ public class ecommercedemo {
             int quantity = 1;
             boolean isDelivered = false;
 
-            
+
             // Display Output
 
             System.out.println("----- Product Details -----");
