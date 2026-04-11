@@ -13,7 +13,7 @@ public class ecommercedemo {
 
 
             // Customer Variables
-            System.out.println("-----------customer varibles--------");
+            System.out.println("-----------customer varibles --------");
 
             int customerId = 501;
             String customerName = "Murari";
