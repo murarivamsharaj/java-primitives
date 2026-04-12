@@ -2,11 +2,13 @@ package com.java.primitives;
 
 public class ConditionalStatmentsTest {
     static void main() {
-        int i = -10;
-        if (i > 0) {
+        int i = 100;
+        if (i >= 200) {
             System.out.println("The given no. is positive");
+        } else if (i <= 185) {
+            System.out.println("no. is negative");
         } else  {
-            System.out.println("the given no. is negative");
+            System.out.println("invalid no.");
         }
     }
 }
