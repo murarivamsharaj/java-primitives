@@ -2,9 +2,15 @@ package com.java.fundamentals;
 
 public class ForTest {
     static void main() {
+        int n = 5;
+        int fact = 1;
 
-        for ( int i = 1; i <= 10; System.out.println(++i) ){
-            i +=3;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
         }
+
+        System.out.println("Factorial of " + n + " is " + fact);
+// Output: Factorial of 5 is 120
+
     }
 }
