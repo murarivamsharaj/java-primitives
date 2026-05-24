@@ -11,5 +11,12 @@ public class Product {
     long maxRetailPrice;
     byte discountPercentage;
 
+    public Product(int id, String name, int maxRetailPrice, float discountPercentage, float rating, int reviewsCount, String company, String category) {
+
+    }
+
+    public Product() {
+
+    }
 }
 
