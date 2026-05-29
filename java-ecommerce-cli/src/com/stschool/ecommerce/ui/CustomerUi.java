@@ -15,9 +15,9 @@ public class CustomerUi {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Id: ");
         int id = scanner.nextInt();
-        System.out.println("Enter Name: ");
+        System.out.println("Enter Name : ");
         String name = scanner.nextLine();
-        System.out.println("Enter Email: ");
+        System.out.println("Enter Email : ");
         String email = scanner.nextLine();
         System.out.println("Enter Password: ");
         String password = scanner.nextLine();
