@@ -13,9 +13,9 @@ public class App {
 
         Product product = Product.builder()
                 .id(1)
-                .name("iphone")
-                .company("Apple")
-                .model("pro")
+                .name("iphone :")
+                .company("Apple :")
+                .model("pro :")
                 .manufactureYear(2026)
                 .maxRetailPrice(69999.99)
                 .maxDiscountPercentage(20.1F)
