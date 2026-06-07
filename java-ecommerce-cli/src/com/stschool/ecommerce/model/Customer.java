@@ -7,6 +7,7 @@ public class Customer {
     private String password;
     private String phone;
 
+
     public Customer() {
     }
 
@@ -51,6 +52,6 @@ public class Customer {
     }
 
     public String toString() {
-        return "Customer{" + "id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", phone=" + phone + '}';
+        return "Customer{" + "id= " + id + ", name= " + name + ", email= " + email + ", password= " + password + ", phone= " + phone + '}';
     }
 }
