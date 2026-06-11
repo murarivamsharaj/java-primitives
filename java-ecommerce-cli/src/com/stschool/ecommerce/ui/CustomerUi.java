@@ -23,12 +23,15 @@ public class CustomerUi {
         String password = scanner.nextLine();
         System.out.println("Enter Phone: ");
         String phone = scanner.nextLine();
+        System.out.println("Enter Address: ");
+        String address = scanner.nextLine();
         Customer customer = new Customer();
         customer.setId(id);
         customer.setName(name);
         customer.setEmail(email);
         customer.setPassword(password);
         customer.setPhone(phone);
+        customer.getAddress(address);
         scanner.close();
         CustomerController customerController = new CustomerController();
         return customerController.save(customer);

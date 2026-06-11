@@ -6,6 +6,7 @@ public class Customer {
     private String email;
     private String password;
     private String phone;
+    private String address;
 
 
     public Customer() {
@@ -50,8 +51,13 @@ public class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    public void getAddress(String address) {
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String toString() {
-        return "Customer{" + "id= " + id + ", name= " + name + ", email= " + email + ", password= " + password + ", phone= " + phone + '}';
+        return "Customer{" + "id= " + id + ", name= " + name + ", email= " + email + ", password= " + password + ", phone= " + phone +  ", address= " + address + '}';
     }
 }

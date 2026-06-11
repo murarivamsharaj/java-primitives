@@ -1,0 +1,110 @@
+package com.java.testing;
+
+import com.java.testing.exception.CustomerExistsException;
+import com.java.testing.exception.CustomerNotFoundException;
+import com.java.testing.model.Customer;
+import com.java.testing.service.CustomerService;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CustomerServiceTest {
+    private CustomerService customerService;
+    private List<Customer> customers;
+
+    @BeforeEach
+    public void setUp() {
+        customers = new ArrayList<>(List.of(
+                Customer.builder().id(1).name("John").email("john@gmail.com").balance(100.0).build(),
+                Customer.builder().id(2).name("Jane").email("jane@gmail.com").balance(200.0).build()
+        ));
+        customerService = new CustomerService(customers);
+    }
+
+    @Test
+    @DisplayName("Should add customer successfully when valid data is provided")
+    void shouldAddCustomerWhenValidData() {
+        Customer customer = new Customer(3, "John", "john@test.com", 1500);
+
+        Customer result = customerService.addCustomer(customer);
+
+        assertEquals("John", result.getName(),"customer name should be John");
+        assertEquals(3, customerService.getAllCustomers().size(),"customer list should have 3 customers");
+    }
+
+    @Test
+    @DisplayName("Should throw exception when adding customer with duplicate ID")
+    void shouldThrowExceptionWhenAddingDuplicateCustomer() {
+        Customer duplicate = new Customer(1, "Test", "test@test.com", 500);
+
+        assertThrows(CustomerExistsException.class,
+                () -> customerService.addCustomer(duplicate),"customer with duplicate ID should not be added");
+
+        assertEquals(2, customerService.getAllCustomers().size(),"customer list should have 2 customers");
+    }
+
+    @Test
+    @DisplayName("Should return customer when valid ID is provided")
+    void shouldReturnCustomerWhenValidId() {
+        Customer customer = customerService.getCustomerById(1);
+        assertNotNull(customer, "customer should not be null");
+        assertEquals(1, customer.getId(),"customer ID should be 1");
+        assertEquals("John", customer.getName(),"customer name should be John");
+    }
+
+    @Test
+    @DisplayName("Should throw exception when customer ID does not exist")
+    void shouldThrowExceptionWhenCustomerNotFound() {
+
+        assertThrows(CustomerNotFoundException.class,
+                () -> customerService.getCustomerById(100),"customer with ID 100 should not exist");
+    }
+
+    @Test
+    @DisplayName("Should delete customer when valid ID is provided")
+    void shouldDeleteCustomerWhenValidId() {
+        boolean result = customerService.deleteCustomer(1);
+        assertTrue(result);
+        assertEquals(1, customerService.getAllCustomers().size());
+    }
+
+    @Test
+    @DisplayName("Should throw exception when deleting non-existing customer")
+    void shouldThrowExceptionWhenDeletingNonExistingCustomer() {
+
+        assertThrows(CustomerNotFoundException.class,
+                () -> customerService.deleteCustomer(999),"customer with ID 999 should not exist");
+    }
+
+    @Test
+    @DisplayName("Should return all customers")
+    void shouldReturnAllCustomers() {
+        assertEquals(2, customerService.getAllCustomers().size(), "Should return 2 customers");
+        assertEquals(1, customerService.getAllCustomers().get(0).getId(), "First customer ID should be 1");
+        assertEquals("John", customerService.getAllCustomers().get(0).getName(), "First customer name should be John");
+        assertEquals(2, customerService.getAllCustomers().get(1).getId(), "Second customer ID should be 2");
+        assertEquals("Jane", customerService.getAllCustomers().get(1).getName(), "Second customer name should be Jane");
+    }
+
+    @Test
+    @DisplayName("Should return total balance of all customers")
+    void shouldReturnTotalBalance() {
+        double total = customerService.getTotalBalance();
+
+        assertEquals(300, total);
+    }
+
+    @AfterEach
+    public void tearDown() {
+        customerService = null;
+        customers = null;
+    }
+
+
+}
