@@ -14,6 +14,7 @@ public  class CustomerService {
         System.out.println("contctno:  " + customer.contactNo);
         System.out.println("salary :" + customer.salary);
         System.out.println("age" + customer.age);
+        System.out.println("gender" + customer.gender);
 
     }
 

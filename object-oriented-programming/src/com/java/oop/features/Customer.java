@@ -13,7 +13,7 @@ public class Customer {
     }
 
     public Customer(int id, String name, String email, long contactNo, byte age, int salary) {
-        System.out.println("customer() with argument called");
+        System.out.println("customer() with argument called ");
         this.id = id;
         this.name = name;
         this.email = email;

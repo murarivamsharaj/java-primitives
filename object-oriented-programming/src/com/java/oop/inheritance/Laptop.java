@@ -6,7 +6,7 @@ package com.java.oop.inheritance;
 
         public Laptop() {
             // super() is called implicitly; kept comment for learning
-            System.out.println("Laptop constructor called");
+            System.out.println("Laptop constructor called ");
         }
 
         public Laptop(int id, String name, int maxRetailPrice, float discountPercentage,

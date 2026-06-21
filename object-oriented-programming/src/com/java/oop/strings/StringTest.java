@@ -15,7 +15,7 @@ public class StringTest {
 
         String str1 = new String();
         System.out.println("str1 : " + str1);
-        char[] chars = {'a', 'b', 'c'};
+        char[] chars = {'a', 'b', 'c','d'};
         String str2 = new String(chars);
         System.out.println("str2 : " + str2);
         String str3 = new String("abc");

@@ -2,8 +2,8 @@ package com.java.oop.abstraction;
 
 public class Main {
     static void main() {
-        Customer customer1 = new Customer(9786, "deepak", "deepak@gmail.com", 857859L, (byte) 78, 35378);
-        Customer customer2 = new Customer(7886, "Anil", "Anil@gmail.com", 346529859L, (byte) 78, 35378);
+        Customer customer1 = new Customer(9786, "deepak", "deepak@gmail.com", 857859L, (byte) 78, 35378, 'M');
+        Customer customer2 = new Customer(7886, "Anil", "Anil@gmail.com", 346529859L, (byte) 78, 35378, 'F');
        /* CustomerService customerService = new CustomerService();
         customerService.addCustomertoDb(customer1);*/
         MySQLRepository repository = new MySQLRepository();
