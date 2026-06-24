@@ -7,9 +7,7 @@ public class SwitchTest {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Day :");
         int day = sc.nextInt();
-
         switch (day) {
-
             case 1:
                 System.out.println("Monday");
                 break;
@@ -32,8 +30,8 @@ public class SwitchTest {
                 System.out.println("Sunday");
                 break;
             default:
-                System.out.println("invalid day");
-             break;
+                System.out.println("Invalid Day");
+                break;
         }
     }
 }
