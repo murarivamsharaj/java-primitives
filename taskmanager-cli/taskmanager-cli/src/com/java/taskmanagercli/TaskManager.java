@@ -34,8 +34,6 @@ public class TaskManager {
                     System.out.println("Exiting... Have a productive day!");
                     running = false;
                     break;
-                case "5":
-                    running = false;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
