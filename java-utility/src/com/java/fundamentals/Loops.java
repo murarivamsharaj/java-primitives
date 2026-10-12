@@ -13,6 +13,7 @@ public class Loops {
         for (int i = 1; i <= 10; i++) {
             // Print the output in the required format: N x i = result
             System.out.println(N + " x " + i + " = " + (N * i));
+            System.out.println(N + " x " + i + " = " + (N * i) );
         }
 
 
