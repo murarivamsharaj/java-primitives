@@ -23,5 +23,9 @@ public class Main {
         dog.eat();
         dog.sleep();
         cat.run();
+        cat.sleep();
+        cat.run();
+        cat.run();
+        cat.eat();
     }
 }
